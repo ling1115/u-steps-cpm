@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "kevy-ellipsis": "/components/kevy-ellipsis/kevy-ellipsis"
+  }
+}
