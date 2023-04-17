@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "u-steps-com": "/components/u-steps-com/u-steps-com",
+    "u-view-title": "/components/u-view-title/u-view-title",
+    "svg-icon": "/components/svg-icon/svg-icon",
+    "u-view-com": "/components/u-view-com/u-view-com"
+  }
+}

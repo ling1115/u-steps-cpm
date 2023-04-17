@@ -173,8 +173,7 @@ var _default2 = {
       default: '#3c9cff'
     },
     fill: {
-      type: String,
-      default: '#3c9cff'
+      type: String
     },
     steps: {
       type: Number

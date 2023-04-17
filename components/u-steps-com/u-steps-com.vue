@@ -11,8 +11,8 @@
 				'--contentbgfirstcolor':contentBgFirstColor}">
 			<div>
 				<svg-icon slot="icon" :type="type" 
-					:size="size" :width="svgWidth" :height="svgHeight" :fill="svgFill"
-					:color="svgFill"
+					:size="size" :width="width" :height="height" :fill="fill"
+					:color="color"
 					@click="handleClick(event)"
 					@svg-click="handleClick(event)"
 				></svg-icon>
@@ -49,7 +49,6 @@
 			},
 			fill: {
 				type:String,
-				default:'#3c9cff'
 			},
 			steps:{type: Number},
 			current:{type: Number},
