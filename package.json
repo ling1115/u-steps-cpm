@@ -1,19 +1,19 @@
 {
-    "id": "kevy-ellipsis",
-    "name": "文本溢出自动省略通用组件",
-    "displayName": "文本溢出自动省略通用组件",
-    "version": "1.2.4",
-    "description": "这是一个uniapp通用的超长文本处理组件，简单的设置达到自动适配超长文本溢出兼容效果。",
-    "keywords": [
-        "长文本",
-        "文本",
-        "省略",
-        "溢出"
-    ],
-    "dcloudext": {
-        "category": [
-            "前端组件",
-            "通用组件"
-        ]
-    }
+	"name": "u-steps-com",
+	"version": "1.0.0",
+	"description": "uni-app 步骤条组件",
+	"main": "main.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ling1115/u-steps-cpm.git"
+	},
+	"keywords": []
 }
