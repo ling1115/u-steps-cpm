@@ -6,7 +6,7 @@ uni-app 步骤条组件，配合右侧显示内容`u-view-com`组件一起使用
 
 ## 1. 使用
 
-参考[github中pagse/index/index.vue](https://github.com/ling1115/u-steps-cpm/tree/dev-master)
+参考[github中pagse/](https://github.com/ling1115/u-steps-cpm/tree/dev-master)
 
 
 ## 2. u-steps-com 
@@ -37,6 +37,7 @@ uni-app 步骤条组件，配合右侧显示内容`u-view-com`组件一起使用
 
 
 ## 3. u-view-com 
+uni app 查看表单信息组件，支持展示/收起更多操作
 
 ### 1. Props
 | 名称 | 类型 | 说明 | 默认值 |
@@ -70,7 +71,7 @@ uni-app 步骤条组件，配合右侧显示内容`u-view-com`组件一起使用
 
 | name	| 说明	| 
 | --- | --- |
-| title	| 支持自定义右侧首部信息 |
+| title	| 支持自定义首部信息 |
 
 ## 4. u-view-title
 可配合 `u-view-title` 新增额外头部信息
