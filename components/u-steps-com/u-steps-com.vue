@@ -85,7 +85,8 @@
 				return this.type.split(' ')
 			},
 			contentHeight(){
-				return this.rContentHeight?(Number(this.rContentHeight)*0.7) + 'px' :this.clientHeight/this.steps/2+'px'
+				let scla = Number(this.rContentHeight)>200?0.7:0.6
+				return this.rContentHeight?(Number(this.rContentHeight)*scla) + 'px' :this.clientHeight/this.steps/2+'px'
 			},
 			lineFirstColor(){// 步骤条渐变第一个颜色
 				return this.lineColor[0]
@@ -128,7 +129,8 @@
 		position: absolute;
 		height: var(--height);
 		left: 31px;
-		margin-top: 16px;
+		margin-top: 16px;	
+		// margin: 16px auto;
 		border-image: linear-gradient(to bottom, var(--fcolor), var(--lcolor)) 1;
 	}
 	// #E30412

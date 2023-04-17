@@ -310,6 +310,7 @@ var _default = {
   mounted: function mounted() {
     if (this.$refs['item_0']) {
       this.rContentHeight = this.$refs['item_0'][0].clientHeight;
+      console.log(this.rContentHeight);
     }
   },
   methods: {

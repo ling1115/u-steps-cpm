@@ -9,39 +9,22 @@
 				:rContentHeight="rContentHeight"
 				>
 			</u-steps-com>
-			<!-- color="#ffffff"
-			size="20px"
-			:lineColor="getlineBg(item)"
-			:contentBgColor="getContentBg(item)" -->
 			<div ref="rContent">
-				<!-- <u-view-title title="操作">
-					<template slot="t-memo">
-						<div>头部说明</div>
-					</template>
-					<template slot="b-memo">
-						<div>底部说明</div>
-					</template>
-					<template slot="right" style="display: flex;flex-direction: row;align-items: center;">
-						<svg-icon type="checkmark-circle" size="12px" color="#1BD88F"></svg-icon>
-						<div style="margin-left:4px;color:#1BD88F">正常</div>
-					</template>
-				</u-view-title> -->
-				
 				<u-view-com
 					:options="item.formItem"
 					@contentClick="handleClickContent"
 					@moreClick="handleClickMore"
 					expandText="更多"
-					collapseText=""
+					collapseText="收起"
 					:rows="Number(2)"
 					color="#333333"
 					:size="Number(14)"
 					actionFontColor="#007aff"
 					:title="item.title"
 				>
-					<!-- <template slot="title">
+					<template slot="title">
 						<span class="t-title">{{ item.title }}</span>
-					</template> -->
+					</template>
 				</u-view-com>
 			</div>
 		</div>
@@ -184,6 +167,7 @@
 		mounted(){
 			if(this.$refs['item_0']){
 				this.rContentHeight = this.$refs['item_0'][0].clientHeight;
+				console.log(this.rContentHeight)
 			}
 		},
 		methods: {

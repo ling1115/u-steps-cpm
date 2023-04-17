@@ -216,7 +216,8 @@ var _default2 = {
       return this.type.split(' ');
     },
     contentHeight: function contentHeight() {
-      return this.rContentHeight ? Number(this.rContentHeight) * 0.7 + 'px' : this.clientHeight / this.steps / 2 + 'px';
+      var scla = Number(this.rContentHeight) > 200 ? 0.7 : 0.6;
+      return this.rContentHeight ? Number(this.rContentHeight) * scla + 'px' : this.clientHeight / this.steps / 2 + 'px';
     },
     lineFirstColor: function lineFirstColor() {
       // 步骤条渐变第一个颜色
