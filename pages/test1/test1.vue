@@ -166,10 +166,10 @@
 		},
 		mounted(){
 			if(this.$refs['item_0']){
-				// #ifdef H5
+				// #ifndef APP-PLUS || APP-NVUE
 				this.rContentHeight = this.$refs['item_0'][0].clientHeightt;
 				// #endif
-				// #ifndef H5
+				// #ifdef APP-PLUS || APP-NVUE
 				let view = uni.createSelectorQuery().in(this).select(".r-item");  
 				view.fields({  
 				  size: true,  
