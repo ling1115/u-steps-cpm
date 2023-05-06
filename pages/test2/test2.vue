@@ -184,7 +184,19 @@
 		},
 		mounted(){
 			if(this.$refs['item_0']){
-				this.rContentHeight = this.$refs['item_0'][0].clientHeight;
+				// #ifdef H5
+				this.rContentHeight = this.$refs['item_0'][0].clientHeightt;
+				// #endif
+				// #ifndef H5
+				let view = uni.createSelectorQuery().in(this).select(".r-item");  
+				view.fields({  
+				  size: true,  
+				  scrollOffset: true  
+				}, data => {  
+				  console.log("得到节点信息" + JSON.stringify(data));  
+					this.rContentHeight = data.height;
+				}).exec();
+				// #endif
 			}
 		},
 		methods: {
