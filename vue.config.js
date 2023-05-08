@@ -8,5 +8,6 @@ module.exports = {
 	configureWebpack: (config) => {
 		const alias = config.resolve.alias;
 		alias['@pages'] = resolve("./pages");
+		alias['@components'] = resolve("./components");
 	},
 }

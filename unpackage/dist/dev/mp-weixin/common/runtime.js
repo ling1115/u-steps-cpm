@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/u-steps-com/u-steps-com":1,"components/u-view-com/u-view-com":1,"components/u-view-title/u-view-title":1,"components/svg-icon/svg-icon":1,"components/kevy-ellipsis/kevy-ellipsis":1,"components/uni-icons/uni-icons":1};
+/******/ 		var cssChunks = {"components/svg-icon/svg-icon":1,"components/u-steps-com/u-steps-com":1,"components/u-view-com/u-view-com":1,"components/u-view-title/u-view-title":1,"components/uni-icons/uni-icons":1,"components/kevy-ellipsis/kevy-ellipsis":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/u-steps-com/u-steps-com":"components/u-steps-com/u-steps-com","components/u-view-com/u-view-com":"components/u-view-com/u-view-com","components/u-view-title/u-view-title":"components/u-view-title/u-view-title","components/svg-icon/svg-icon":"components/svg-icon/svg-icon","components/kevy-ellipsis/kevy-ellipsis":"components/kevy-ellipsis/kevy-ellipsis","components/uni-icons/uni-icons":"components/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/svg-icon/svg-icon":"components/svg-icon/svg-icon","components/u-steps-com/u-steps-com":"components/u-steps-com/u-steps-com","components/u-view-com/u-view-com":"components/u-view-com/u-view-com","components/u-view-title/u-view-title":"components/u-view-title/u-view-title","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/kevy-ellipsis/kevy-ellipsis":"components/kevy-ellipsis/kevy-ellipsis"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

@@ -1,5 +1,5 @@
 <template>
-	<view class="t-wrap" :style="{'--width': contentWidth}">
+	<view class="t-wrap">
 		<view class="t-txt-hide" :id="hid" v-if="!isCompute" :style="[computeStyle(0)]">
 			{{testContent?testContent:content}}{{showSymbol?'...':''}}
 			<text v-if="(expandText || collapseText)&&rows>0"
@@ -11,11 +11,6 @@
 			{{((!isCompute || expand)&&rows>0)?content:(actualContent+(showSymbol?'...':''))}}<text
 				v-if="(expandText || collapseText) && showSymbol" class="t-button" @click.stop="changeCollapse"
 				:style="{'color':actionFontColor,'float':'right'}">{{!expand?expandText:collapseText}}</text>
-		</view>
-		<view v-if="!isCompute && rows>0" class="t-skeleton">
-			<view class="skeletons" v-for="(item,index) in rows">
-				<view class="empty"></view>
-			</view>
 		</view>
 	</view>
 </template>
@@ -74,14 +69,10 @@
 			/**
 			 * 展示行数，默认1
 			 */
-			rows: {
-				type: Number,
+			rows:{
+				type: [String,Number],
 				default: 1
 			},
-			contentWidth:{
-				type: String,
-				default: ''
-			}
 		},
 		data() {
 			return {
@@ -104,7 +95,8 @@
 				id: 'id' + Math.random().toString(36).substr(2),
 			};
 		},
-		created() {
+		created(){},
+		mounted() {
 			if (this.content?.length > 0) {
 				// #ifdef H5
 				this.$nextTick(() => {
@@ -139,79 +131,87 @@
 			contentClick() {
 				this.$emit('contentClick');
 			},
+		},
+		watch:{
+			isCompute:{
+				handler(newval){
+					console.log(newval,'newval')
+				},
+				immediate: true,
+				deep: true
+			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.t-wrap {
-		// width: var(--width);
-		width:100%;
-		box-sizing: border-box;
-		position: relative;
-	}
-
-	.t-txt-hide {
-		word-break: break-word;
-		position: absolute;
-		top: 999999px;
-		left: 999999px;
-		z-index: -1000;
-		top: 0rpx;
-		width: 100%;
-		margin: 0rpx;
-		text-align: justify;
-
-	}
-
-	.t-ellipsis {
-		text-align: end;
-		box-sizing: border-box;
-		width: 100%;
-		word-break: break-word;
-		position: relative;
-		left: 99999px;
-	}
-	.t-skeleton{
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
-		position: absolute;
-		top: 0rpx;
-		left: 0rpx;
-	}
-	.skeletons:first-child{
-		margin-top: 0rpx !important;
-	}
-	.skeletons {
-		position: relative;
-		display: block;
-		overflow: hidden;
-		width: 100%;
-		height: 32rpx;
-		margin-top: 12rpx;
-		background-color: rgba(0, 0, 0, 0.06);
-		box-sizing: border-box;
-	}
-
-	.skeletons .empty {
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-transform: translateX(-100%);
-		transform: translateX(-100%);
-		background: linear-gradient(90deg, transparent, rgba(216, 216, 216, 0.753), transparent);
-		-webkit-animation: loading .8s infinite;
-		animation: loading .8s infinite;
-	}
-
-
-
-	@keyframes loading {
-		100% {
-			-webkit-transform: translateX(100%);
-			transform: translateX(100%);
+			// width: var(--width);
+			width:100%;
+			box-sizing: border-box;
+			position: relative;
 		}
-	}
+	
+		.t-txt-hide {
+			word-break: break-word;
+			position: absolute;
+			top: 999999px;
+			left: 999999px;
+			z-index: -1000;
+			top: 0rpx;
+			width: 100%;
+			margin: 0rpx;
+			text-align: justify;
+		}
+	
+		.t-ellipsis {
+			text-align: end;
+			box-sizing: border-box;
+			width: 100%;
+			word-break: break-word;
+			position: relative;
+			left: 99999px;
+		}
+		.t-skeleton{
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0rpx;
+			left: 0rpx;
+		}
+		.skeletons:first-child{
+			margin-top: 0rpx !important;
+		}
+		.skeletons {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			height: 32rpx;
+			margin-top: 12rpx;
+			background-color: rgba(0, 0, 0, 0.06);
+			box-sizing: border-box;
+		}
+	
+		// .skeletons .empty {
+		// 	display: block;
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	-webkit-transform: translateX(-100%);
+		// 	transform: translateX(-100%);
+		// 	background: linear-gradient(90deg, transparent, rgba(216, 216, 216, 0.753), transparent);
+		// 	-webkit-animation: loading .8s infinite;
+		// 	animation: loading .8s infinite;
+		// }
+	
+	
+	
+		// @keyframes loading {
+		// 	100% {
+		// 		-webkit-transform: translateX(100%);
+		// 		transform: translateX(100%);
+		// 	}
+		// }
 </style>

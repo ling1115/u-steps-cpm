@@ -126,7 +126,7 @@
 	.step-content::after{
 		content: '';
 		border-style: var(--line);
-		border-left: 1px;
+		border-left: 1rpx;
 		position: absolute;
 		height: var(--height);
 		left: 31px;

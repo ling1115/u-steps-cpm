@@ -10,12 +10,11 @@
 					<div class="t-title">{{ title }}</div>
 				</div>
 			</div>
-			<div class="base-info-content">
+			<div class="base-info-content" v-if="options.length">
 				<div class="base-item" v-for="(item,index) in options" :key="index">
 					<div class="item-label">{{item.label}}</div>
 					<div class="item-value" :ref="`item_${index}`">
-						<!-- #ifdef MP-ALIPAY || H5 -->
-							<kevy-ellipsis v-if="item.value && item.value.length>0"
+							<kevy-ellipsis
 								:content="item.value"
 								:font-size="size"
 								:font-color="color" :rows="rows" 
@@ -25,11 +24,6 @@
 								:expandText="expandText" 
 								:actionFontColor="actionFontColor"
 							></kevy-ellipsis>
-						<!-- #endif -->
-						
-						<!-- #ifndef MP-ALIPAY || H5 -->
-						{{item.value}}
-						<!-- #endif -->
 					</div>
 				</div>
 			</div>
@@ -66,7 +60,7 @@ export default{
 		},
 		size:{
 			type: [String,Number],
-			default: 14
+			default: 28
 		},
 		expandText:{
 			type: String,
@@ -184,10 +178,8 @@ export default{
 					align-items: center;
 					text-align: right;
 					color: #333333;
-					// #ifdef MP-ALIPAY || H5
 					flex: 1;
-					// #endif
-					justify-content: end;
+					justify-content: flex-end;
 				}
 			}
 		}

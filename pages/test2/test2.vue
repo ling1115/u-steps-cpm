@@ -33,10 +33,10 @@
 					@contentClick="handleClickContent"
 					@moreClick="handleClickMore"
 					expandText="更多"
-					collapseText=""
-					:rows="Number(2)"
+					collapseText="收起"
+					:rows="2"
 					color="#333333"
-					:size="Number(14)"
+					:size="28"
 					actionFontColor="#007aff"
 					:title="item.title"
 				>
@@ -183,21 +183,21 @@
 			}
 		},
 		mounted(){
+			// #ifdef H5
 			if(this.$refs['item_0']){
-				// #ifndef APP-PLUS || APP-NVUE
 				this.rContentHeight = this.$refs['item_0'][0].clientHeight;
-				// #endif
-				// #ifdef  APP-PLUS || APP-NVUE
-				let view = uni.createSelectorQuery().in(this).select(".r-item");  
-				view.fields({  
-				  size: true,  
-				  scrollOffset: true  
-				}, data => {  
-				  console.log("得到节点信息" + JSON.stringify(data));  
-					this.rContentHeight = data.height;
-				}).exec();
-				// #endif
 			}
+			// #endif
+			// #ifdef  APP-PLUS || APP-NVUE || MP-WEIXIN
+			let view = uni.createSelectorQuery().in(this).select(".r-item");  
+			view.fields({  
+			  size: true,  
+			  scrollOffset: true  
+			}, data => {  
+			  console.log("得到节点信息" + JSON.stringify(data));  
+				this.rContentHeight = data.height;
+			}).exec();
+			// #endif
 		},
 		methods: {
 			// 点击文本

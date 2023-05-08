@@ -9421,7 +9421,7 @@ internalMixin(Vue);
 /***/ }),
 /* 26 */
 /*!**********************************************************!*\
-  !*** /Users/clz/学习/前端提升/uni-demo/u-steps-com/pages.json ***!
+  !*** /Users/clz/学习/my-components/u-steps-com/pages.json ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -9603,145 +9603,7 @@ function normalizeComponent (
 /* 71 */,
 /* 72 */,
 /* 73 */,
-/* 74 */
-/*!*********************************************************************************************!*\
-  !*** /Users/clz/学习/前端提升/uni-demo/u-steps-com/components/kevy-ellipsis/kevy-ellipsis.min.js ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-var _typeof2 = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
-function _typeof(t) {
-  return (_typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (t) {
-    return _typeof2(t);
-  } : function (t) {
-    return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : _typeof2(t);
-  })(t);
-}
-function ownKeys(e, t) {
-  var n,
-    o = Object.keys(e);
-  return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(e), t && (n = n.filter(function (t) {
-    return Object.getOwnPropertyDescriptor(e, t).enumerable;
-  })), o.push.apply(o, n)), o;
-}
-function _objectSpread(e) {
-  for (var t = 1; t < arguments.length; t++) {
-    var n = null != arguments[t] ? arguments[t] : {};
-    t % 2 ? ownKeys(Object(n), !0).forEach(function (t) {
-      _defineProperty(e, t, n[t]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ownKeys(Object(n)).forEach(function (t) {
-      Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
-    });
-  }
-  return e;
-}
-function _defineProperty(t, e, n) {
-  return (e = _toPropertyKey(e)) in t ? Object.defineProperty(t, e, {
-    value: n,
-    enumerable: !0,
-    configurable: !0,
-    writable: !0
-  }) : t[e] = n, t;
-}
-function _toPropertyKey(t) {
-  t = _toPrimitive(t, "string");
-  return "symbol" === _typeof(t) ? t : String(t);
-}
-function _toPrimitive(t, e) {
-  if ("object" !== _typeof(t) || null === t) return t;
-  var n = t[Symbol.toPrimitive];
-  if (void 0 === n) return ("string" === e ? String : Number)(t);
-  n = n.call(t, e || "default");
-  if ("object" !== _typeof(n)) return n;
-  throw new TypeError("@@toPrimitive must return a primitive value.");
-}
-var init = function init(e, n, t) {
-    (t ? uni.createSelectorQuery().in().select("#" + e.id).boundingClientRect(function (t) {
-      e.h = Number(t.height.toFixed(1)), e.w = Number(t.width.toFixed(1)), n && n();
-    }) : uni.createSelectorQuery().in(e).select("#" + e.id).boundingClientRect(function (t) {
-      e.h = Number(t.height.toFixed(1)), e.w = Number(t.width.toFixed(1)), n && n();
-    })).exec();
-  },
-  computeStyle = function computeStyle(o) {
-    return function (t) {
-      var e = 0 < o.rows ? o.rows : 1,
-        n = {};
-      return 1 == t ? n = {
-        "-webkit-line-clamp": e,
-        display: "-webkit-box",
-        "text-overflow": "ellipsis",
-        overflow: "hidden",
-        "-webkit-box-orient": "vertical"
-      } : 2 == t && (n = _objectSpread({
-        position: "relative",
-        left: "0rpx"
-      }, n)), _objectSpread({
-        "font-size": o.fontSize + "px",
-        color: o.fontColor
-      }, n);
-    };
-  },
-  computeContent = function e(n, o, r) {
-    n.$nextTick(function () {
-      getH(n, o, function (t) {
-        t > n.h ? -1 === r ? (n.testContent = n.content.substring(0, n.testContent.length - 1), e(n, o, r)) : (n.actualContent = n.content.substring(0, n.testContent.length - 1), n.isCompute = !0) : -1 === r ? (n.actualContent = n.testContent, n.isCompute = !0) : (n.testContent = n.content.substring(0, n.testContent.length + 1), e(n, o, r));
-      });
-    });
-  },
-  compute = function compute(e, n) {
-    var o = e.rows,
-      r = e.fontSize,
-      i = e.content,
-      u = e.h,
-      c = e.w;
-    e.testContent = i, e.$nextTick(function () {
-      getH(e, n, function (t) {
-        u < t ? (t = Math.floor(c / rpx2px(r)), t = fontNum(i, 2 * (t * o) - (e.expandText ? fontNum(e.expandText) : 0) - 3), e.showSymbol = !0, e.testContent = i.substring(0, t), e.$nextTick(function () {
-          getH(e, n, function (t) {
-            u < t ? (e.testContent = i.substring(0, e.testContent.length - 1), computeContent(e, n, -1)) : (e.testContent = i.substring(0, e.testContent.length + 1), computeContent(e, n, 1));
-          });
-        })) : (e.isCompute = !0, e.actualContent = i);
-      });
-    });
-  },
-  fontNum = function fontNum(t, e) {
-    for (var n = 0, o = 0; o < t.length; o++) {
-      if (null != t.charAt(o).match(/[^\x00-\xff]/gi)) {
-        if (e && e < n + 2) return o;
-        n += 2;
-      } else {
-        if (e && e < n + 1) return o;
-        n += 1;
-      }
-    }
-    if (!e) return n;
-  },
-  rpx2px = function rpx2px(t) {
-    return uni.getSystemInfoSync().windowWidth * t / 750;
-  },
-  getH = function getH(t, e, n) {
-    (e ? uni.createSelectorQuery().in().select("#" + t.hid).fields({
-      size: !0
-    }, function (t) {
-      n(Number(t.height.toFixed(1)));
-    }) : uni.createSelectorQuery().in(t).select("#" + t.hid).fields({
-      size: !0
-    }, function (t) {
-      n(Number(t.height.toFixed(1)));
-    })).exec();
-  };
-module.exports = {
-  init: init,
-  computeStyle: computeStyle,
-  compute: compute
-};
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
+/* 74 */,
 /* 75 */,
 /* 76 */,
 /* 77 */,
@@ -9749,9 +9611,15 @@ module.exports = {
 /* 79 */,
 /* 80 */,
 /* 81 */,
-/* 82 */
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */
 /*!*****************************************************************************!*\
-  !*** /Users/clz/学习/前端提升/uni-demo/u-steps-com/components/uni-icons/icons.js ***!
+  !*** /Users/clz/学习/my-components/u-steps-com/components/uni-icons/icons.js ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9978,6 +9846,152 @@ var _default = {
   'uicon-en': "\uE692"
 };
 exports.default = _default;
+
+/***/ }),
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */
+/*!*********************************************************************************************!*\
+  !*** /Users/clz/学习/my-components/u-steps-com/components/kevy-ellipsis/kevy-ellipsis.min.js ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+var _typeof2 = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
+function _typeof(t) {
+  return (_typeof = "function" == typeof Symbol && "symbol" == _typeof2(Symbol.iterator) ? function (t) {
+    return _typeof2(t);
+  } : function (t) {
+    return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : _typeof2(t);
+  })(t);
+}
+function ownKeys(e, t) {
+  var n,
+    o = Object.keys(e);
+  return Object.getOwnPropertySymbols && (n = Object.getOwnPropertySymbols(e), t && (n = n.filter(function (t) {
+    return Object.getOwnPropertyDescriptor(e, t).enumerable;
+  })), o.push.apply(o, n)), o;
+}
+function _objectSpread(e) {
+  for (var t = 1; t < arguments.length; t++) {
+    var n = null != arguments[t] ? arguments[t] : {};
+    t % 2 ? ownKeys(Object(n), !0).forEach(function (t) {
+      _defineProperty(e, t, n[t]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ownKeys(Object(n)).forEach(function (t) {
+      Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t));
+    });
+  }
+  return e;
+}
+function _defineProperty(t, e, n) {
+  return (e = _toPropertyKey(e)) in t ? Object.defineProperty(t, e, {
+    value: n,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : t[e] = n, t;
+}
+function _toPropertyKey(t) {
+  t = _toPrimitive(t, "string");
+  return "symbol" === _typeof(t) ? t : String(t);
+}
+function _toPrimitive(t, e) {
+  if ("object" !== _typeof(t) || null === t) return t;
+  var n = t[Symbol.toPrimitive];
+  if (void 0 === n) return ("string" === e ? String : Number)(t);
+  n = n.call(t, e || "default");
+  if ("object" !== _typeof(n)) return n;
+  throw new TypeError("@@toPrimitive must return a primitive value.");
+}
+var init = function init(e, n, t) {
+    (t ? uni.createSelectorQuery().in().select("#" + e.id).boundingClientRect(function (t) {
+      e.h = Number(t.height.toFixed(1)), e.w = Number(t.width.toFixed(1)), n && n();
+    }) : uni.createSelectorQuery().in(e).select("#" + e.id).boundingClientRect(function (t) {
+      e.h = Number(t.height.toFixed(1)), e.w = Number(t.width.toFixed(1)), n && n();
+    })).exec();
+  },
+  computeStyle = function computeStyle(o) {
+    return function (t) {
+      var e = 0 < o.rows ? o.rows : 1,
+        n = {};
+      return 1 == t ? n = {
+        "-webkit-line-clamp": e,
+        display: "-webkit-box",
+        "text-overflow": "ellipsis",
+        overflow: "hidden",
+        "-webkit-box-orient": "vertical"
+      } : 2 == t && (n = _objectSpread({
+        position: "relative",
+        left: "0rpx"
+      }, n)), _objectSpread({
+        "font-size": o.fontSize + "rpx",
+        color: o.fontColor
+      }, n);
+    };
+  },
+  computeContent = function e(n, o, r) {
+    n.$nextTick(function () {
+      getH(n, o, function (t) {
+        t > n.h ? -1 === r ? (n.testContent = n.content.substring(0, n.testContent.length - 1), e(n, o, r)) : (n.actualContent = n.content.substring(0, n.testContent.length - 1), n.isCompute = !0) : -1 === r ? (n.actualContent = n.testContent, n.isCompute = !0) : (n.testContent = n.content.substring(0, n.testContent.length + 1), e(n, o, r));
+      });
+    });
+  },
+  compute = function compute(e, n) {
+    var o = e.rows,
+      r = e.fontSize,
+      i = e.content,
+      u = e.h,
+      c = e.w;
+    e.testContent = i, e.$nextTick(function () {
+      getH(e, n, function (t) {
+        u < t ? (t = Math.floor(c / rpx2px(r)), t = fontNum(i, 2 * (t * o) - (e.expandText ? fontNum(e.expandText) : 0) - 3), e.showSymbol = !0, e.testContent = i.substring(0, t), e.$nextTick(function () {
+          getH(e, n, function (t) {
+            u < t ? (e.testContent = i.substring(0, e.testContent.length - 1), computeContent(e, n, -1)) : (e.testContent = i.substring(0, e.testContent.length + 1), computeContent(e, n, 1));
+          });
+        })) : (e.isCompute = !0, e.actualContent = i);
+      });
+    });
+  },
+  fontNum = function fontNum(t, e) {
+    for (var n = 0, o = 0; o < t.length; o++) {
+      if (null != t.charAt(o).match(/[^\x00-\xff]/gi)) {
+        if (e && e < n + 2) return o;
+        n += 2;
+      } else {
+        if (e && e < n + 1) return o;
+        n += 1;
+      }
+    }
+    if (!e) return n;
+  },
+  rpx2px = function rpx2px(t) {
+    return uni.getSystemInfoSync().windowWidth * t / 750;
+  },
+  getH = function getH(t, e, n) {
+    (e ? uni.createSelectorQuery().in().select("#" + t.hid).fields({
+      size: !0
+    }, function (t) {
+      n(Number(t.height.toFixed(1)));
+    }) : uni.createSelectorQuery().in(t).select("#" + t.hid).fields({
+      size: !0
+    }, function (t) {
+      n(Number(t.height.toFixed(1)));
+    })).exec();
+  };
+module.exports = {
+  init: init,
+  computeStyle: computeStyle,
+  compute: compute
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ })
 ]]);

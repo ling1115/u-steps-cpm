@@ -1,36 +1,29 @@
 {
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": false,
-    "postcss": false,
-    "minified": false,
-    "newFeature": true,
-    "bigPackageSizeSupport": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "",
-  "appid": "touristappid",
-  "projectname": "u-steps-com",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
+    "description": "项目配置文件。",
+    "packOptions": {
+        "ignore": [],
+        "include": []
     },
-    "conversation": {
-      "current": -1,
-      "list": []
+    "setting": {
+        "urlCheck": false,
+        "es6": false,
+        "postcss": false,
+        "minified": false,
+        "newFeature": true,
+        "bigPackageSizeSupport": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        }
     },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
+    "compileType": "miniprogram",
+    "libVersion": "2.31.1",
+    "appid": "touristappid",
+    "projectname": "u-steps-com",
+    "condition": {},
+    "editorSetting": {
+        "tabIndent": "auto",
+        "tabSize": 4
     }
-  }
 }
