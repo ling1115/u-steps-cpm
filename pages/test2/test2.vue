@@ -185,7 +185,7 @@
 		mounted(){
 			if(this.$refs['item_0']){
 				// #ifndef APP-PLUS || APP-NVUE
-				this.rContentHeight = this.$refs['item_0'][0].clientHeightt;
+				this.rContentHeight = this.$refs['item_0'][0].clientHeight;
 				// #endif
 				// #ifdef  APP-PLUS || APP-NVUE
 				let view = uni.createSelectorQuery().in(this).select(".r-item");  
@@ -217,7 +217,7 @@
 			},
 			// 点击svg图标
 			handleSvgClick(i){
-				console.log("点击")
+				console.log("点击svg")
 				console.log(i);
 			},
 			// 根据状态设置图标

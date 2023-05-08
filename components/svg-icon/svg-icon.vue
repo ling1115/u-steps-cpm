@@ -1,7 +1,8 @@
 <template>
 	<div class='icon-content'>
-		<uni-icons :type="iconName[0]" v-if="iconName.length == 1" style="line-height:36px;" :color="svgFill" :size="svgWidth" @click="svgClick"></uni-icons>
-		<text v-else :class="[iconName[0], iconName[1], 'default-color']" :style="{ color: svgFill, fontSize: svgWidth }" @click="svgClick"></text>
+		<text v-if="iconName.length > 1" :class="[iconName[0], iconName[1], 'default-color']" :style="{ color: svgFill, fontSize: svgWidth }" @click="svgClick"></text>
+		<image v-else-if="iconName.length == 1 && iconName[0].includes('/')" :src="iconName[0]" mode="" :style="{ height: svgHeight, width: svgWidth }"  @click="svgClick"></image>
+		<uni-icons v-else :type="iconName[0]" style="line-height:72rpx;" :color="svgFill" :size="svgWidth" @click="svgClick"></uni-icons>
 	</div>
 	
 </template>
@@ -15,18 +16,23 @@ export default {
 		type: String,
 		size: {
 			type: [String, Number],
-			default: '24px'
+			default: '48rpx'
 		},
+		index: [String, Number],
 		width: {
 			type: String
 		},
 		height: {
 			type: String
 		},
-		color: String,
+		color: {
+			type: String,
+			default: '#3c9cff'
+		},
 		fill: {
 			type: String
-		}
+		},
+		stop: [String, Boolean],
 	},
 	data() {
 		return {
@@ -48,11 +54,12 @@ export default {
 		}
 	},
 	methods: {
-		svgClick(event) {
-			this.$emit('svg-click', event)
-			this.$emit('click', event)
+		svgClick(e) {
+			this.$emit('svg-click', this.index)
+			this.$emit('click', this.index)
+			this.stop && e && e.stopPropagation();
 		}
-	}
+	},
 }
 </script>
 

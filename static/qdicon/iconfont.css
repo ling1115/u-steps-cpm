@@ -1,0 +1,81 @@
+@import url(https://at.alicdn.com/t/c/font_4011404_wwi9cfkplfr.css); //跟上面的基础字体库一样，这个是远程de
+
+.qdfont {
+  font-family: "qdfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.qd-delivery:before {
+  content: "\e60c";
+}
+
+.qd-pick:before {
+  content: "\e60d";
+}
+
+.qd-receiptmanager:before {
+  content: "\e60e";
+}
+
+.qd-registermanager:before {
+  content: "\e60f";
+}
+
+.qd-signout:before {
+  content: "\e610";
+}
+
+.qd-register:before {
+  content: "\e611";
+}
+
+.qd-pick3:before {
+  content: "\e612";
+}
+
+.qd-pick2:before {
+  content: "\e613";
+}
+
+.qd-delivery1:before {
+  content: "\e614";
+}
+
+.qd-register2:before {
+  content: "\e615";
+}
+
+.qd-reload:before {
+  content: "\e60b";
+}
+
+.qd-error:before {
+  content: "\e60a";
+}
+
+.qd-wait:before {
+  content: "\e604";
+}
+
+.qd-checkmark:before {
+  content: "\e605";
+}
+
+.qd-warn:before {
+  content: "\e606";
+}
+
+.qd-logoff:before {
+  content: "\e607";
+}
+
+.qd-normal:before {
+  content: "\e608";
+}
+
+.qd-file:before {
+  content: "\e609";
+}
+

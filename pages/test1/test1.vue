@@ -199,7 +199,7 @@
 			},
 			// 点击svg图标
 			handleSvgClick(i){
-				console.log("点击")
+				console.log("点击svg")
 				console.log(i);
 			},
 			// 根据状态设置图标

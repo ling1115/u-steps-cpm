@@ -12,7 +12,16 @@
 				"navigationBarTitleText": "uni-app"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/svgTest/svgTest",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

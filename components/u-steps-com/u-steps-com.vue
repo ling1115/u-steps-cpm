@@ -13,8 +13,8 @@
 				<svg-icon slot="icon" :type="type" 
 					:size="size" :width="width" :height="height" :fill="fill"
 					:color="color"
-					@click="handleClick(event)"
-					@svg-click="handleClick(event)"
+					@click="handleClick"
+					@svg-click="handleClick"
 				></svg-icon>
 			</div>
 		</div>
@@ -85,6 +85,7 @@
 				return this.type.split(' ')
 			},
 			contentHeight(){
+				console.log(this.rContentHeight,'rContentHeight')
 				let scla = Number(this.rContentHeight)>200?0.7:0.6
 				return this.rContentHeight?(Number(this.rContentHeight)*scla) + 'px' :this.clientHeight/this.steps/2+'px'
 			},
@@ -108,9 +109,9 @@
 			})
 		},
 		methods: {
-			handleClick(event) {
-				this.$emit('svg-click', event)
-				this.$emit('click', event)
+			handleClick() {
+				this.$emit('svg-click')
+				this.$emit('click')
 			},
 		}
 	}
