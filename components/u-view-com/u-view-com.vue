@@ -14,6 +14,10 @@
 				<div class="base-item" v-for="(item,index) in options" :key="index">
 					<div class="item-label">{{item.label}}</div>
 					<div class="item-value" :ref="`item_${index}`">
+						<!-- #ifdef MP-WEIXIN -->
+						{{item.value}}
+						<!-- #endif -->
+						<!-- #ifndef MP-WEIXIN -->
 							<kevy-ellipsis
 								:content="item.value"
 								:font-size="size"
@@ -24,6 +28,7 @@
 								:expandText="expandText" 
 								:actionFontColor="actionFontColor"
 							></kevy-ellipsis>
+							<!-- #endif -->
 					</div>
 				</div>
 			</div>
