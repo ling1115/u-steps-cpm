@@ -241,6 +241,8 @@ var _default = {
   methods: {
     //收起展开状态切换
     changeCollapse: function changeCollapse() {
+      console.log(11111);
+      console.log(this.collapseText, '12');
       this.$emit('moreClick');
       if (!this.collapseText) return;
       this.expand = !this.expand;
