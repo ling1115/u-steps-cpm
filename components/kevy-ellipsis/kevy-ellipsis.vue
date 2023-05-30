@@ -12,6 +12,13 @@
 				v-if="(expandText || collapseText) && showSymbol" class="t-button" @click.stop="changeCollapse"
 				:style="{'color':actionFontColor,'float':'right'}">{{!expand?expandText:collapseText}}</text>
 		</view>
+		<!-- #ifdef  H5 -->
+		<view v-if="!isCompute && rows>0" class="t-skeleton">
+			<view class="skeletons" v-for="(item,index) in rows">
+				<view class="empty"></view>
+			</view>
+		</view>
+		<!-- #endif -->
 	</view>
 </template>
 
