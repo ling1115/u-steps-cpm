@@ -72,7 +72,9 @@
 							{
 								key:'businessType',
 								label:'业务类型',
-								value:'仓单合并'
+								value:'仓单合并',
+								color:"#B10008",
+								weight: '600'
 							},
 							{
 								key:'weight',

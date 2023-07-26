@@ -21,7 +21,9 @@
 							<kevy-ellipsis
 								:content="item.value"
 								:font-size="size"
-								:font-color="color" :rows="rows" 
+								:font-weight="item.weight?item.weight:weight"
+								:font-color="item.color?item.color:color" 
+								:rows="rows" 
 								@contentClick="handleClickContent(index, item.value, item)" 
 								@moreClick="handleClickMore(index, item.value, item)"
 								:collapseText="collapseText" 

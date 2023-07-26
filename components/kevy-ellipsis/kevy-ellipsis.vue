@@ -52,6 +52,10 @@
 				color: String,
 				default: '#666666'
 			},
+			fontWeight: {
+				color: String,
+				default: '400'
+			},
 			/**
 			 * 收起操作的文案，默认''
 			 */
