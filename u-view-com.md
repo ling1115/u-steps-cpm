@@ -9,6 +9,7 @@ uni app 查看表单信息组件，支持展示/收起更多操作
 | rows | Number | 头部标题，非必填 | 2 |
 | color | string | label字体颜色 | #333333 |
 | size | Number | label字体大小，单位px | 14 |
+| weight | Number,string | font-weight | 400 |
 | collapseText	| String | 	收起操作的文案，无收起操作文案，点击更多时不会展开 | 目前微信小程序不支持，默认展示全部内容 | 
 | expandText	| String	| 展开操作的文案| 目前微信小程序不支持，默认展示全部内容 | 
 | actionFontColor	| String	| 收起、展开操作文字颜色| '#007aff' |

@@ -69,6 +69,10 @@ export default{
 			type: [String,Number],
 			default: 28
 		},
+		weight:{
+			type: [String,Number],
+			default: 400
+		},
 		expandText:{
 			type: String,
 			default:''
